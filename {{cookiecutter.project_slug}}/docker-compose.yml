@@ -1,0 +1,33 @@
+#
+# syntax: https://docs.docker.com/compose/yml/
+#
+
+version: "2"
+
+services:
+    mysql:
+        # restart: always
+        image: mysql:5.7
+        networks:
+            - back-tier
+        expose:
+            - "3306"
+        ports:
+            - "3307:3306"
+        volumes:
+            - mysql-data:/var/lib/mysql/
+        environment:
+           - MYSQL_ROOT_PASSWORD=zed@123
+           - MYSQL_DATABASE={{cookiecutter.project_slug}}
+           - MYSQL_CHARSET=utf-8
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "100M"
+                max-file: "3"
+volumes:
+    mysql-data:
+networks:
+    back-tier:
+
+
