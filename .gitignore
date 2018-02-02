@@ -101,3 +101,7 @@ ENV/
 .mypy_cache/
 
 .idea/
+
+# ignore downloads file but keep folder
+audio_book/downloads/*
+!audio_book/downloads/.gitkeep

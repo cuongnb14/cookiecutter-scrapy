@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import os 
 
 # Scrapy settings for jokes project
 #
@@ -100,3 +101,6 @@ MYSQL = {
 }
 
 
+# MEDIA dir
+ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
+DOWNLOADS_DIR = "{}/downloads".format(ROOT_DIR )
