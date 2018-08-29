@@ -31,7 +31,7 @@ class CategoryModel(TimeStampedModelMixin, Base):
 
 
 class JokesModel(TimeStampedModelMixin, Base):
-    __tablename__ = '{{cookiecutter.project_slug}}'
+    __tablename__ = 'jokes'
 
     id = Column(Integer, primary_key=True)
     title = Column(String(255))
