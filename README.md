@@ -20,7 +20,7 @@ Step 1: Init project
 
 Step 2: Install requirements
 
-`pip3 install -r requirements.txt`
+`make requirements`
 
 Step 3: Run mysql container
 
