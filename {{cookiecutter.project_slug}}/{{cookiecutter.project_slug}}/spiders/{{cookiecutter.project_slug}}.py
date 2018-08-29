@@ -10,4 +10,4 @@ class {{cookiecutter.class_name}}Spider(scrapy.Spider):
     start_urls = [BASE_URL]
 
     def parse(self, response):
-        pass
+        self.logger.info(str(response))

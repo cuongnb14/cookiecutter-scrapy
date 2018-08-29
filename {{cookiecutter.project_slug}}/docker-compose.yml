@@ -10,8 +10,6 @@ services:
         image: mysql:5.7
         networks:
             - back-tier
-        expose:
-            - "3306"
         ports:
             - "3307:3306"
         volumes:
