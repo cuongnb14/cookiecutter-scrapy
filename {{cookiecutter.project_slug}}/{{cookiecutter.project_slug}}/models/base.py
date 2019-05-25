@@ -7,7 +7,7 @@ from sqlalchemy.orm import scoped_session
 
 from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime
 from sqlalchemy.ext.declarative import declarative_base
-from {{cookiecutter.project_slug}}.settings import MYSQL
+from {{cookiecutter.project_slug}}.configs.settings import MYSQL
 
 Base = declarative_base()
 
