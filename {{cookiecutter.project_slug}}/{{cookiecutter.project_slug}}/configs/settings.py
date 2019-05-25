@@ -12,6 +12,9 @@ import os
 
 BOT_NAME = '{{cookiecutter.project_slug}}'
 
+LOG_LEVEL = "INFO"
+LOG_FORMATTER = '{{cookiecutter.project_slug}}.utils.logging.CustomLogFormatter'
+
 SPIDER_MODULES = ['{{cookiecutter.project_slug}}.spiders']
 NEWSPIDER_MODULE = '{{cookiecutter.project_slug}}.spiders'
 
@@ -109,3 +112,8 @@ MYSQL = {
 # MEDIA dir
 ROOT_DIR = os.path.dirname(os.path.realpath(__file__))
 DOWNLOADS_DIR = "{}/downloads".format(ROOT_DIR )
+
+# Discord
+WEBHOOK_URL = "https://discordapp.com/api/webhooks/xxxxxxx"
+
+SERVER = env("SERVER", "LOCAL")
