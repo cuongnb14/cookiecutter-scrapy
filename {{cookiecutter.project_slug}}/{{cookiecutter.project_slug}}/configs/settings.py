@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os 
+env = os.getenv
 
 # Scrapy settings for jokes project
 #
