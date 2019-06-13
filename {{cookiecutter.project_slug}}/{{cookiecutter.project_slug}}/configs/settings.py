@@ -119,3 +119,5 @@ DOWNLOADS_DIR = "{}/downloads".format(ROOT_DIR )
 WEBHOOK_URL = "https://discordapp.com/api/webhooks/xxxxxxx"
 
 SERVER = env("SERVER", "LOCAL")
+
+PROXY_IGNORE_HOST = []

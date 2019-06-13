@@ -2,6 +2,9 @@ from scrapy import signals
 import requests
 from lxml import html
 from multiprocessing.pool import ThreadPool
+import random
+from urllib.parse import urlparse
+from azura_crawler.configs import settings
 
 
 class FreeProxyMiddleware(object):
