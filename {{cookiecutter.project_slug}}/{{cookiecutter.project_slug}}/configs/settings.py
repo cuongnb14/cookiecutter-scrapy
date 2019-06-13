@@ -55,15 +55,10 @@ ROBOTSTXT_OBEY = False
 #    'jokes.middlewares.JokesSpiderMiddleware': 543,
 # }
 
-# TODO: use can user free proxy middware
-# SPIDER_MIDDLEWARES = {
-#    '{{cookiecutter.project_slug}}.middlewares.free_proxy.FreeProxyMiddleware': 543,
-# }
-
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'jokes.middlewares.MyCustomDownloaderMiddleware': 543,
+#    '{{cookiecutter.project_slug}}.middlewares.free_proxy.FreeProxyMiddleware': 543,
 # }
 
 # Enable or disable extensions
