@@ -11,6 +11,7 @@ This cookie cutter is a very simple boilerplate for starting a scrapy project ha
 - Simple scrapy project with MySQL pipiline
 - Use docker for MySQL
 - Use Makefile 
+- 
 
 ## Usage
 
