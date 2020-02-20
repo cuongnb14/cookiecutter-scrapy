@@ -2,7 +2,7 @@
 import os 
 env = os.getenv
 
-# Scrapy settings for jokes project
+# Scrapy settings for {{cookiecutter.project_slug}} project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -96,6 +96,7 @@ ITEM_PIPELINES = {
 
 
 # Mysql DB
+# -------------------------------------------------------------------
 MYSQL = {
     'dialect': 'mysql',
     'host': '127.0.0.1',
