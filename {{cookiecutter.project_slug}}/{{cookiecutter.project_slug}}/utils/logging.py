@@ -1,4 +1,3 @@
-from scrapy import log
 from scrapy import logformatter
 import logging
 
