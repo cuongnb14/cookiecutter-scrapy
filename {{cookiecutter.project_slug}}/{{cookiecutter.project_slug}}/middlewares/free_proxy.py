@@ -52,7 +52,6 @@ class FreeProxyMiddleware(object):
 
         return active_proxies[:max_proxy]
 
-
     def spider_opened(self, spider):
         if spider.name not in ["image", "image_raw_product"]:
             spider.logger.info('Get list proxies from CMS ...')
