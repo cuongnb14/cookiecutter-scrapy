@@ -1,31 +1,39 @@
-#
-# syntax: https://docs.docker.com/compose/yml/
-#
+version: '2.4'
 
-version: "2"
+x-default: &default
+    networks:
+        - {{cookiecutter.project_slug}}-net
+    # cpus: 0.5
+    # mem_limit: 500M
+    restart: always
+    # init: true
+    # privileged: true
+    # stdin_open: true
+    # tty: true
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10M"
+            max-file: "3"
+
+volumes:
+  mysql-data:
+
+networks:
+    {{cookiecutter.project_slug}}-net:
 
 services:
     mysql:
-        # restart: always
+        << : *default
         image: mysql:5.7
-        networks:
-            - back-tier
         ports:
-            - "3307:3306"
+            - "3306:3306"
         volumes:
             - mysql-data:/var/lib/mysql/
         environment:
            - MYSQL_ROOT_PASSWORD=zed@123
            - MYSQL_DATABASE={{cookiecutter.project_slug}}
            - MYSQL_CHARSET=utf-8
-        logging:
-            driver: "json-file"
-            options:
-                max-size: "100M"
-                max-file: "3"
-volumes:
-    mysql-data:
-networks:
-    back-tier:
+
 
 
