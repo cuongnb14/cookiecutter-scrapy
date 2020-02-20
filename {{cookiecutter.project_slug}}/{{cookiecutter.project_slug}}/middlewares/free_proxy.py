@@ -4,7 +4,7 @@ from lxml import html
 from multiprocessing.pool import ThreadPool
 import random
 from urllib.parse import urlparse
-from azura_crawler.configs import settings
+from {{cookiecutter.project_slug}}.configs import settings
 
 
 class FreeProxyMiddleware(object):
@@ -47,7 +47,7 @@ class FreeProxyMiddleware(object):
         active_proxies = [x for x in active_proxies if x is not None]
 
         if not active_proxies:
-            discord.send_message("No proxy to use")
+            # discord.send_message("No proxy to use")
             raise Exception("No proxy to use")
 
         return active_proxies[:max_proxy]
