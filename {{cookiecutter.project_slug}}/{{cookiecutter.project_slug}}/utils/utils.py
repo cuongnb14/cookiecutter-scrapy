@@ -1,9 +1,13 @@
-def download_file(name, file_link):
-	"""
-	Dowload file from link and save to local
+import requests
+from {{cookiecutter.project_slug}}.configs import settings
 
-	"""
-    print("Download: "+file_link)
+
+def download_file(name, file_link):
+    """
+    Dowload file from link and save to local
+
+    """
+    headers = {}
     file = requests.get(file_link, stream=True, headers=headers)
     file.raise_for_status()
 
