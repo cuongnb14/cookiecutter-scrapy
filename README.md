@@ -12,6 +12,7 @@ This cookie cutter is a very simple boilerplate for starting a scrapy project ha
 - Use docker for MySQL
 - Use Makefile 
 - Integrate free proxy midleware
+- Integrate celery pipeline (option)
 
 ## Usage
 
