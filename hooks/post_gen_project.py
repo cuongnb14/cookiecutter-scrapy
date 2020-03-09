@@ -28,14 +28,6 @@ SUCCESS = "\x1b[1;32m [SUCCESS]: "
 
 DEBUG_VALUE = "debug"
 
-def remove_celery_files():
-    file_names = [
-        os.path.join("celery", "app.py"),
-        os.path.join("pipelines", "celery.py"),
-    ]
-    for file_name in file_names:
-        os.remove(file_name)
-
 def remove_dotgitlabciyml_file():
     os.remove(".gitlab-ci.yml")
 
@@ -86,15 +78,16 @@ def set_flag(file_path, flag, value=None, formatted=None, *args, **kwargs):
 
     return value
 
-
-def remove_envs_and_associated_files():
-    shutil.rmtree(".envs")
-    os.remove("merge_production_dotenvs_in_dotenv.py")
-
+def remove_celery_files():
+    file_names = [
+        os.path.join("{{ cookiecutter.project_slug }}", "celery", "app.py"),
+        os.path.join("{{ cookiecutter.project_slug }}", "pipelines", "celery.py"),
+    ]
+    for file_name in file_names:
+        os.remove(file_name)
 
 def remove_celery_dirs():
-    shutil.rmtree(os.path.join("celery"))
-
+    shutil.rmtree(os.path.join("{{ cookiecutter.project_slug }}", "celery"))
 
 def main():
     
