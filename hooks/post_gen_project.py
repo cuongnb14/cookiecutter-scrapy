@@ -97,7 +97,6 @@ def remove_celery_dirs():
 
 
 def main():
-    set_flags_in_settings_files()
     
     if "{{ cookiecutter.use_celery_pipeline }}".lower() == "n":
         remove_celery_files()
