@@ -5,7 +5,8 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
-from {{cookiecutter.project_slug}}.models.base import session, JokesModel
+from {{cookiecutter.project_slug}}.models.models import JokesModel
+from {{cookiecutter.project_slug}}.models.sessions import session
 from sqlalchemy import exists
 
 

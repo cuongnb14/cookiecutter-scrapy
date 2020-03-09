@@ -95,9 +95,9 @@ ITEM_PIPELINES = {
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 
-# Mysql DB
+# DB Configs
 # -------------------------------------------------------------------
-MYSQL = {
+DB = {
     'dialect': 'mysql',
     'host': '127.0.0.1',
     'port': '3307',

@@ -1,13 +1,6 @@
 import datetime
-
-import sqlalchemy
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.orm import scoped_session
-
 from sqlalchemy import Column, Integer, String, Text, ForeignKey, DateTime
 from sqlalchemy.ext.declarative import declarative_base
-from {{cookiecutter.project_slug}}.configs.settings import MYSQL
 
 Base = declarative_base()
 
@@ -38,30 +31,3 @@ class JokesModel(TimeStampedModelMixin, Base):
     content = Column(Text())
     category_id = Column(Integer, ForeignKey("category.id"))
     link = Column(String(1000))
-
-
-
-
-
-engine_url = sqlalchemy.engine.url.URL(
-                drivername=MYSQL["dialect"],
-                host=MYSQL["host"],
-                port=MYSQL["port"],
-                username=MYSQL["username"],
-                password=MYSQL["password"],
-                database=MYSQL["db_name"],
-                query={'charset': 'utf8'}
-        )
-
-db_engine = create_engine(engine_url, encoding='utf-8', echo=False, pool_recycle=3600)
-Session = sessionmaker(autocommit=False, autoflush=False, bind=db_engine)
-session = scoped_session(Session)
-
-
-def create_schema():
-    """
-    Drop schema if exists and create schema
-
-    """
-    Base.metadata.drop_all(db_engine)
-    Base.metadata.create_all(db_engine)
