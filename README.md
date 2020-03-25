@@ -13,6 +13,7 @@ This cookie cutter is a very simple boilerplate for starting a scrapy project ha
 - Use Makefile 
 - Integrate free proxy midleware
 - Integrate celery pipeline (option)
+- Integrate crontab for schedule
 
 ## Usage
 
