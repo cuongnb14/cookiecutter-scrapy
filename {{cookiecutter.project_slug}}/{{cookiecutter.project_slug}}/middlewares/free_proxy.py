@@ -54,7 +54,6 @@ class FreeProxyMiddleware(object):
 
     def spider_opened(self, spider):
         if spider.name not in ["image", "image_raw_product"]:
-            spider.logger.info('Get list proxies from CMS ...')
             spider.proxies = self._get_active_proxies()
             spider.logger.info('{} proxies for spider {}: {}'.format(len(spider.proxies), spider.name, spider.proxies))
 
