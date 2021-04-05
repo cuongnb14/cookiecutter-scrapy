@@ -70,7 +70,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   '{{cookiecutter.project_slug}}.pipelines.MySQLPipeline': 300,
+#    '{{cookiecutter.project_slug}}.pipelines.MySQLPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
