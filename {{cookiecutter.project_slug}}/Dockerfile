@@ -1,5 +1,4 @@
-FROM ubuntu:18.04
-LABEL maintainer="{{cookiecutter.email}}"
+FROM ubuntu:20.04
 
 RUN apt-get update -qq
 
