@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+        .value {
+            font-weight: bold;
+        }
+        .panel {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div class="container ">
+    <div class="panel panel-default">
+        <div class="panel-heading">Log stats</div>
+        <div class="panel-body">
+            <div class="container">
+                <h4>Overview</h4>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <span class="key">Item scraped count:</span>
+                        <span class="value">{{ data.result.item_scraped_count }}</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="key">Response received count:</span>
+                        <span class="value">{{ data.result.response_received_count }}</span>
+                    </div>
+                    <div class="col-sm-4">
+                        <span class="key">Finish reason:</span>
+                        <span class="value">{{ data.result.finish_reason }}</span>
+                    </div>
+                </div>
+                <hr>
+                <h4>Log count</h4>
+                <div class="row">
+                    {% for key, value in data.log_count.items %}
+                        <div class="col-sm-4">
+                            <span class="key">{{ key }}:</span>
+                            <span class="value">{{ value }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <hr>
+                <h4>Downloader</h4>
+                <div class="row">
+                    {% for key, value in data.downloader.items %}
+                        <div class="col-sm-4">
+                            <span class="key">{{ key }}:</span>
+                            <span class="value">{{ value }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <hr>
+                <h4>Scheduler</h4>
+                <div class="row">
+                    {% for key, value in data.scheduler.items %}
+                        <div class="col-sm-4">
+                            <span class="key">{{ key }}:</span>
+                            <span class="value">{{ value }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <hr>
+                <h4>More</h4>
+                <div class="row">
+                    {% for key, value in data.more.items %}
+                        <div class="col-sm-4">
+                            <span class="key">{{ key }}:</span>
+                            <span class="value">{{ value }}</span>
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
