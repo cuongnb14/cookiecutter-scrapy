@@ -1,2 +1,2 @@
-web: cd web_ui && python3 manage.py runserver 0.0.0.0:8000
-scrapyd: ./start.sh
+web: cd web_ui && gunicorn web_ui.wsgi:application -b :8000
+scrapyd: scrapyd

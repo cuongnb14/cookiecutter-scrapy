@@ -21,6 +21,6 @@ RUN crontab /etc/cron.d/schedule
 
 COPY . /app
 
-RUN chmod +x start.sh
+RUN chmod +x entrypoint.sh
 
-CMD ["./start.sh"]
+ENTRYPOINT ["./entrypoint.sh"]

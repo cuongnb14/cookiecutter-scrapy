@@ -5,6 +5,7 @@ from datetime import datetime
 
 import requests
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template.response import TemplateResponse
@@ -18,6 +19,7 @@ SCRAPYD_HOST = '127.0.0.1'
 SCRAPYD_PORT = 6800
 
 
+@login_required
 def index(request):
     scrapy_client = ScraydAPI(host=SCRAPYD_HOST, port=SCRAPYD_PORT)
 
@@ -40,6 +42,7 @@ def index(request):
     return render(request, 'crawler/status.html', context)
 
 
+@login_required
 def run_spider(request, spider):
     try:
         try:
@@ -65,6 +68,7 @@ def run_spider(request, spider):
     return redirect(reverse('status'))
 
 
+@login_required
 def cancel_job(request, job_id):
     try:
         scrapy_client = ScraydAPI(host=SCRAPYD_HOST, port=SCRAPYD_PORT)
@@ -81,6 +85,7 @@ def cancel_job(request, job_id):
     return redirect(reverse('status'))
 
 
+@login_required
 def log_stats(request, spider, job_id):
     try:
         url = "http://{}:{}/logs/default/{}/{}.log".format(SCRAPYD_HOST, SCRAPYD_PORT, spider, job_id)
@@ -127,6 +132,7 @@ def log_stats(request, spider, job_id):
         raise e
 
 
+@login_required
 def log_detail(request, spider, job_id):
     url = "http://{}:{}/logs/default/{}/{}.log".format(SCRAPYD_HOST, SCRAPYD_PORT, spider, job_id)
     response = requests.get(url)
