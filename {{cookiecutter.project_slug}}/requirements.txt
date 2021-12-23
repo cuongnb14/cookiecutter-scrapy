@@ -13,5 +13,5 @@ gunicorn==20.1.0
 whitenoise==5.2.0
 {%- if cookiecutter.use_celery_pipeline == "y" %}
 redis==3.4.1
-celery==4.4.0  # pyup: < 5.0  # https://github.com/celery/celery
+celery==5.2.1
 {%- endif %}

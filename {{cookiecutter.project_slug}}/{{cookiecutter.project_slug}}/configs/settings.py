@@ -120,5 +120,5 @@ SERVER = env("SERVER", "LOCAL")
 PROXY_IGNORE_HOST = []
 
 {%- if cookiecutter.use_celery_pipeline == "y" %}
-CELERY_BROKER_URL = env("CELERY_BROKER_URL", "redis://127.0.0.1:6379/0")
+CELERY_BROKER_URL = env("CELERY_BROKER_URL", "redis://:dev@127.0.0.1:6379/1")
 {%- endif %}
