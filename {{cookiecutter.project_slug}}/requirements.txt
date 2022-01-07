@@ -7,10 +7,6 @@ requests==2.23.0
 
 psycopg2-binary==2.8.6
 
-django==3.2.3
-honcho==1.0.1
-gunicorn==20.1.0
-whitenoise==5.2.0
 {%- if cookiecutter.use_celery_pipeline == "y" %}
 redis==3.4.1
 celery==5.2.1
