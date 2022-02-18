@@ -6,7 +6,6 @@ from {{cookiecutter.project_slug}}.items import JokesItem
 class {{cookiecutter.class_name}}Spider(scrapy.Spider):
     name = "{{cookiecutter.project_slug}}"
     BASE_URL = "http://www.google.com.vn"
-    start_urls = [BASE_URL]
 
     # custom_settings = {
     #     'ITEM_PIPELINES': {
@@ -14,5 +13,8 @@ class {{cookiecutter.class_name}}Spider(scrapy.Spider):
     #     },
     # }
 
-    def parse(self, response):
+    def start_requests(self):
+        yield scrapy.Request(BASE_URL, callback=self.parse)
+
+    def parse(self, response, *args, **kwargs):
         self.logger.info(str(response))
